@@ -1,6 +1,7 @@
 # ==============================================================================
 # FLASK APPLICATION WITH MODEL INTEGRATION
 # ==============================================================================
+import os
 import io
 import numpy as np
 import tensorflow as tf
@@ -82,10 +83,6 @@ def index():
     return jsonify({"status": "Smart Waste API is running", "model_loaded": MODEL is not None})
 
 if __name__ == '__main__':
-    load_and_prepare_model() 
-    # Initialize the database if it doesn't exist
-    from waste_db import init_db 
-    init_db()
-    
-    # Run the server on port 5000
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    load_and_prepare_model()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

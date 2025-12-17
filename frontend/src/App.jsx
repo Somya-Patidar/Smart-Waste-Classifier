@@ -3,8 +3,8 @@ import axios from 'axios';
 import './App.css'; // We'll define styles in App.css
 
 // --- Configuration ---
-// The URL of your running Flask API
-const API_URL = 'http://127.0.0.1:5000/api/predict'; 
+// Change this from localhost to your Render URL
+const API_URL = 'https://waste-backend.onrender.com/api/predict';
 const INITIAL_RESULT_STATE = {
     class: null,
     confidence: null,
