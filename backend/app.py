@@ -10,7 +10,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input 
-from waste_db import CLASS_LABELS, get_instructions # Import database functions
+from backend.waste_db import CLASS_LABELS, get_instructions
+
 
 # --- Configuration ---
 MODEL_PATH = 'smart_waste_model.h5' 
@@ -21,6 +22,10 @@ MODEL = None
 app = Flask(__name__)
 # Enable CORS for development (allows React on port 3000 to talk to Flask on 5000)
 CORS(app) 
+
+@app.route("/")
+def home():
+    return "Waste Classifier API running"
 
 def load_and_prepare_model():
     """Loads the trained Keras model into memory once at startup."""
