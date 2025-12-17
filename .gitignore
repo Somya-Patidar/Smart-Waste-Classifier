@@ -1,0 +1,17 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Database (keep local, don't push to GitHub)
+backend/waste_instructions.db
+
+# React/Node dependencies
+node_modules/
+dist/
+build/
+
+# OS specific files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,143 @@
+/* General Layout */
+body{
+  display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+.app-container {
+    max-width: 900px;
+    margin: 0 auto;
+    
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.app-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+/* Upload and Preview Layout */
+.content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.upload-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    border: 1px dashed #bbb;
+    border-radius: 8px;
+}
+
+.upload-section button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-section button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.upload-section button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Results Display */
+.results-section {
+    display: flex;
+    gap: 40px;
+}
+
+.image-preview {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder {
+    color: #888;
+    font-size: 1.2em;
+}
+
+.prediction-output {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.success-output h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.confidence {
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.instructions-box {
+    padding: 15px;
+    border-left: 4px solid #007bff;
+    background-color: #e9f5ff;
+    border-radius: 4px;
+}
+
+.instructions-box h3 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.instructions-box p {
+    color: #355475;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Class-Specific Colors for Labels */
+.class-label {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
+.plastic { background-color: #28a745; }
+.metal { background-color: #6c757d; }
+.cardboard { background-color: #ffc107; color: #333;}
+.paper { background-color: #007bff; }
+.glass { background-color: #17a2b8; }
+.trash { background-color: #dc3545; }
+
+/* Error Handling */
+.error-message {
+    padding: 15px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
