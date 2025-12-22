@@ -14,3 +14,4 @@ frontend/build/
 
 # Environment Variables
 .env
+.env
