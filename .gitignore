@@ -1,17 +1,16 @@
-# Python virtual environment
-venv/
-__pycache__/
+# Python
+backend/venv/
+backend/__pycache__/
 *.pyc
+
+# Node
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+
+# Production builds
+frontend/dist/
+frontend/build/
+
+# Environment Variables
 .env
-
-# Database (keep local, don't push to GitHub)
-backend/waste_instructions.db
-
-# React/Node dependencies
-node_modules/
-dist/
-build/
-
-# OS specific files
-.DS_Store
-Thumbs.db
