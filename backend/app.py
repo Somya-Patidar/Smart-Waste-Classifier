@@ -14,7 +14,8 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from waste_db import CLASS_LABELS, get_instructions
 
 # --- Configuration ---
-MODEL_PATH = 'smart_waste_model.h5' 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'smart_waste_model.h5')
 IMG_SIZE = (224, 224)
 MODEL = None 
 
@@ -24,7 +25,10 @@ app = Flask(__name__)
 # Updated CORS to be more explicit for web deployments
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["https://smart-waste-classifier-rust.vercel.app/", "http://localhost:3000"],
+        "origins": [
+            "https://smart-waste-classifier-rust.vercel.app", # Removed trailing slash
+            "http://localhost:3000"
+        ],
         "methods": ["POST", "OPTIONS"],
         "allow_headers": ["Content-Type"]
     }

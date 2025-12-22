@@ -4,7 +4,8 @@ import './App.css'; // We'll define styles in App.css
 
 // --- Configuration ---
 // Change this from localhost to your Render URL
-const API_URL = 'https://smart-waste-classifier-h0ae.onrender.com/';
+// CHANGE THIS:
+const API_URL = 'https://smart-waste-classifier-h0ae.onrender.com/api/predict';
 const INITIAL_RESULT_STATE = {
     class: null,
     confidence: null,
