@@ -24,7 +24,7 @@ app = Flask(__name__)
 # Updated CORS to be more explicit for web deployments
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["https://smart-waste-classifier-inky.vercel.app", "http://localhost:3000"],
+        "origins": ["https://smart-waste-classifier-rust.vercel.app/", "http://localhost:3000"],
         "methods": ["POST", "OPTIONS"],
         "allow_headers": ["Content-Type"]
     }
