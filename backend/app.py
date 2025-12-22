@@ -23,16 +23,7 @@ MODEL = None
 app = Flask(__name__)
 
 # Updated CORS to be more explicit for web deployments
-CORS(app, resources={
-    r"/api/*": {
-        "origins": [
-            "https://smart-waste-classifier-rust.vercel.app", # Removed trailing slash
-            "http://localhost:3000"
-        ],
-        "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 def load_and_prepare_model():
     """Loads the trained Keras model into memory."""
