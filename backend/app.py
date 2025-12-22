@@ -2,10 +2,17 @@
 # FLASK APPLICATION WITH MODEL INTEGRATION (PRODUCTION READY)
 # ==============================================================================
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
+
 import io
 import numpy as np
-import tensorflow as tf
 from PIL import Image
+
+import tensorflow as tf
+# Limit TensorFlow to a single thread to save memory
+tf.config.threading.set_inter_op_parallelism_threads(1)
+tf.config.threading.set_intra_op_parallelism_threads(1)
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from tensorflow.keras.models import load_model
